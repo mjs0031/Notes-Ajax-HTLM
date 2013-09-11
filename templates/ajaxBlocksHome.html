@@ -1,0 +1,109 @@
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ajax Blocks Seach</title>
+	
+	<script src="jQuery.js" type="text/javascript" language = "JavaScript">
+	</script>
+
+	<script>
+	
+		window.onload = function()
+    	{
+    		alert("welcome");	
+    	}
+	
+		<!--
+		
+		var asyncRequest;	 
+		
+		window.onload = function()
+		{
+			document.getElementById('searchButton').onclick = function()
+			{
+				var searchString = document.getElementById('searchBox').value;
+				
+				getContent('/blocks/search/' + searchString);	    
+			}
+		}
+		
+		function getContent(url)
+		{
+			try
+			{
+				asyncRequest = new XMLHttpRequest();
+				asyncRequest.onreadystatechange = stateChange;
+				asyncRequest.open('GET', url, true)
+				asyncRequest.send( null );
+			}
+			catch(exception)
+			{
+				alert('failed');
+			}
+		}
+		
+		function stateChange()
+		{
+			if ( asyncRequest.readyState == 4 && asyncRequest.status == 200 )
+			{
+				document.getElementById('searchResults').innerHTML = 
+						 asyncRequest.responseText; 
+
+			}
+		}
+		
+		$(document).ready(function(){
+			$("#RED").addClass("red");
+		});	
+		-->
+	
+	</script>
+
+</head>
+
+<body>
+
+	<h1><b><i>
+	<FONT COLOR="#FF0000">B</FONT>
+	<FONT COLOR="#FF9933">l</FONT>
+	<FONT COLOR="#FFFF33">o</FONT>
+	<FONT COLOR="#00CC66">c</FONT>
+	<FONT COLOR="#0000FF">k</FONT>
+	<FONT COLOR="#6600CC">s</FONT>
+	!
+	
+	 Search</i></b></h1>
+	
+	<hr>
+	<h3>Search for any Blocks! by color:</h3>
+	
+	<table>
+		<tr><td><b><i>Legend</b></i></td></tr>
+		<tr><td width="75"><i>Color:</i></td><td><i>Try these color keys<i></td></tr>
+		<tr><td><FONT COLOR="#FF0000">Red</td><td>r</td></tr>
+		<tr><td><FONT COLOR="#FF9933">Orange</td><td>o</td></tr>
+		<tr><td><FONT COLOR="#FFFF33">Yellow</td><td>y</td></tr>
+		<tr><td><FONT COLOR="#00CC66">Green</td><td>g</td></tr>
+		<tr><td><FONT COLOR="#0000FF">Blue</td><td>b</td></tr>
+		<tr><td><FONT COLOR="#6600CC">Purple</td><td>p</td></tr>
+	</table>
+
+	<br>
+	<br>
+	<input type='text' size='24' id='searchBox'>
+	</input>
+	<button id='searchButton'>What Color Blocks?</button>
+
+	
+
+	
+	<hr>
+	<table id='searchResults'>
+
+	</table>
+
+
+
+
+</body>
+
+</html>

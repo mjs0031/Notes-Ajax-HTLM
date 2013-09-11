@@ -1,0 +1,52 @@
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+</head>
+
+<body>
+
+	<p><i>
+	{% if found %}
+		The following Blocks!
+		match
+		<br> 
+		your color key.
+	{% else %}
+		No Blocks! match that color key.
+	{% endif %}
+	</i></p>
+
+	<br>
+	
+	<table>
+		{% if found %}
+		<tr><td width="100"><i><b>Name:</b><i></td>
+					<td width="100"><i><b>Height:</b></i></td><td width="100"><i><b>Width:</b></i></td>
+					<td width="100"><i><b>Weight:</b></i></td></tr>
+		{% for block in results %}
+			<tr>
+			{% if color == 'r' %}
+			<td><FONT COLOR="#FF0000">{{block.name}}</td>
+			{% elif color == 'o' %}
+			<td><FONT COLOR="#FF9933">{{block.name}}</td>
+			{% elif color == 'y' %}
+			<td><FONT COLOR="#FFFF33">{{block.name}}</td>
+			{% elif color == 'g' %}
+			<td><FONT COLOR="#00CC66">{{block.name}}</td>
+			{% elif color == 'b' %}
+			<td><FONT COLOR="#0000FF">{{block.name}}</td>
+			{% elif color == 'p' %}
+			<td><FONT COLOR="#6600CC">{{block.name}}</td>
+			{% endif %}
+			<td>{{block.height}}</td><td>{{block.width}}</td><td>{{block.weight}}</td></tr>
+		{% endfor %}
+		{% else %}
+		<tr><td width="100"><i><b>Name:</b><i></td><td width="100"><i><b>Height:</b></i></td>
+			<td width="100"><i><b>Width:</b></i></td><td width="100"><i><b>Weight:</b></i></td></tr>
+		{% for block in results %}
+			<tr><td>{{block.name}}</td><td>{{block.height}}</td><td>{{block.width}}</td><td>{{block.weight}}</td></tr>
+		{% endfor %}				
+		{% endif %}
+	</table>
+	
+</body>
+</html>	
